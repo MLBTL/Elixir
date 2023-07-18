@@ -6,21 +6,9 @@
 </template>
 
 <script setup lang="ts">
-	import $api from "@/common/request"
+	import { testApi } from '@/api/home'
 
-	console.log($api.request)
-	$api.request({
-		url: "/biz/commodity/detail",
-		data: {
-			id: 1
-		}
-	}).then((res) => {
-		console.log(90)
-		console.log(res)
-	}).catch((req) => {
-		console.log(91)
-		console.log(req)
-	})
+	testApi()
 </script>
 
 <style>
