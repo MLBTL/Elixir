@@ -8,6 +8,7 @@
 <script setup lang="ts">
 	import $api from "@/common/request"
 
+	console.log($api.request)
 	$api.request({
 		url: "/biz/commodity/detail",
 		data: {

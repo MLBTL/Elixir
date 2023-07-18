@@ -1,3 +1,11 @@
+interface OptionsVO {
+	url : string,
+	data ?: any,
+	header ?: any,
+	method ?: string,
+	dataType ?: string
+}
+
 export default {
 	// 参数
 	common: {
@@ -12,12 +20,12 @@ export default {
 	},
 
 	// 请求
-	request(options = {}) {
+	request(options : OptionsVO) {
 		options.url = this.common.baseUrl + options.url;
-		options.data = option.data || this.common.data;
-		options.header = option.header || this.common.header;
-		options.method = option.method || this.common.method;
-		options.dataType = option.dataType || this.common.dataType;
+		options.data = options.data || this.common.data;
+		options.header = options.header || this.common.header;
+		options.method = options.method || this.common.method;
+		options.dataType = options.dataType || this.common.dataType;
 		return new Promise((res, req) => {
 			uni.request({
 				url: options.url,
